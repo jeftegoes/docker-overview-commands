@@ -38,8 +38,6 @@ services:
     container_name: mysql_dev
     image: mysql
     restart: always
-    volumes:
-      - D:/DockerVolumes/mysql_home:/etc/mysql/conf.d
     environment:
       MYSQL_ROOT_PASSWORD: Master@123
     ports:
@@ -156,6 +154,19 @@ services:
     restart: always
     environment:
       POSTGRES_PASSWORD: Master@123
+    networks:
+      - windows_net
+  localstack:
+    container_name: localstack_dev
+    image: localstack/localstack
+    ports:
+      - '127.0.0.1:4566:4566'
+      - '127.0.0.1:4510-4559:4510-4559'
+      - '127.0.0.1:443:443'
+    environment:
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN:?}
+      - DEBUG=${DEBUG:-0}
+      - PERSISTENCE=${PERSISTENCE:-0}
     networks:
       - windows_net
 networks:

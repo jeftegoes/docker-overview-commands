@@ -113,6 +113,9 @@
   - docker network create `<network_name>`
 - Export a docker image
   - docker save -o `<file_name_output>` `<name_image>`
+- Push to Docker Hub
+  - `docker tag <original_image:tag> <remote_docker_hub_image:tag>`
+  - `docker push <remove_docker_hub_image:tag>`
 
 # 4. Dockerfile structure
 
