@@ -245,7 +245,16 @@ services:
       - lenses-hq-volume:/hq
       - lenses-agent-volume:/agent
       - postgres-volume:/postgres
-
+  kafka-rest:
+    image: confluentinc/cp-kafka-rest:8.3.1
+    hostname: kafka-rest
+    environment:
+      KAFKA_REST_HOST_NAME: kafka-rest
+      KAFKA_REST_LISTENERS: http://0.0.0.0:8082
+      KAFKA_REST_BOOTSTRAP_SERVERS: PLAINTEXT://demo-kafka:19092
+      KAFKA_REST_SCHEMA_REGISTRY_URL: http://demo-kafka:8081
+    ports:
+      - "8082:8082"
 # Volumes are used to share data between containers.
 # The optional volumes are there to allow persistence.
 volumes:
