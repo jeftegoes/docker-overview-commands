@@ -63,7 +63,7 @@
 # 2. Instalation in Windows 10
 
 - Enable WSL in Windows 10
-  - ![Enable WSL in Windows 10](Images/EnableWSLWindows10.png)
+  - ![Enable WSL in Windows 10](/images/enable-wsl-windows-10.png)
 - Update wsl to wsl2
   - wsl --update
 
