@@ -7,3 +7,6 @@
   3. Sign in with admin / admin
   4. Verify with your email, and activate Lenses
 - See detailed instructions for the deployment and RAM/VM requirements in [Lenses Docs](https://docs.lenses.io/latest/getting-started/quickstart)
+
+1. `export ACCEPT_EULA=true`
+2. `docker compose up -d`

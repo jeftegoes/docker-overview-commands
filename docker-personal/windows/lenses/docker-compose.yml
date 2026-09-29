@@ -110,7 +110,7 @@ services:
   # - Kafka broker at localhost:9092 (PLAINTEXT)
   # - Schema registry at localhost:8081
   demo-kafka:
-    image: lensesio/fast-data-dev:3.9.0
+    image: lensesio/fast-data-dev:4.3.1
     hostname: demo-kafka
     environment:
       ADV_HOST: demo-kafka
@@ -125,7 +125,7 @@ services:
         DOCKERCOMPOSE:PLAINTEXT,CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,
         SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
       # Makes things a little lighter
-      DISABLE: debezium-mongodb,debezium-mysql,debezium-postgres,debezium-sqlserver,debezium-jdbc
+      DISABLE: debezium-mongodb,debezium-mysql,debezium-postgres,debezium-sqlserver,debezium-jdbc,elastic6,elastic7,cosmosdb,cassandra,cassandra-sink
     # These are the ports for Kafka and Schema Registry. You can disable them if
     # you don't need to access Kafka from your host.
     ports:
